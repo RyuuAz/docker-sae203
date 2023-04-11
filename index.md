@@ -319,4 +319,4 @@ De plus, pour ajouter un thème, il nous faudra créer un fichier _yconfig.yml_,
 `google_analytics:`
 `theme: jekyll-theme-midnight`
 
-On peut accéder au site à l'adresse : **https://ryuuaz.github.io/docker-sae203/**
+On peut accéder au site à l'adresse : [Link](**https://ryuuaz.github.io/docker-sae203/**)
