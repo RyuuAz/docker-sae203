@@ -261,7 +261,7 @@ copie. Ensuite, on clone clone ce référentiel dans notre répertoire _tp4_ ave
 2. On peut ensuite créer une branche thématique avec `git checkout -b pull-request-demo-FrancoisLiziard` dans le répertoire du référentiel. On peut ensuite synchroniser les
 changements avec `git push origin pull-request-demo-FrancoisLiziard`.
 
-3. 3. Modifications sur la branche _thématique pull-request-demo-<votre utilisateur>_ : On
+3. Modifications sur la branche _thématique pull-request-demo-<votre utilisateur>_ : On
 peut obtenir le hash avec la commande `shasum`. On peut taper `echo "François Liziard" |  shasum`. Cette commande retourne le code de hachage suivant :
 _09aafb58a36c8380006caf5ca477616e7f09e71c_.
 On se place dans le répertoire _pr_users_ (`cd pr_users`), on créé un répertoire en utilisant le
