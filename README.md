@@ -7,7 +7,7 @@
 
 ## TP 1 : Travailler sur un répertoire local
 
-###1. Configuration de git
+###	1. Configuration de git
 
 	On utilise la commande `git config --list` pour obtenir la configuration
 actuelle.
@@ -42,7 +42,7 @@ Retourne : _François Liziard_
 Retourne : _francois.liziard@etu.univ-lehavre.fr_
 
 
-###2. Création d'un dépôt git sur une machine locale
+###	2. Création d'un dépôt git sur une machine locale
 
 	On crée, tout d'abord un répertoire courseGIT avec la commande : `mkdir courseGIT`.
 Puis, en se plaçant dans courseGIT, on crée un répertoire tp1.
@@ -53,7 +53,7 @@ Puis, en se plaçant dans courseGIT, on crée un répertoire tp1.
 	
 	La commande `git status` vérifie les modifications apportées aux fichiers.
 	
-###3. Création d’un fichier texte README.md
+### 3. Création d’un fichier texte README.md
 
 ####	3.1. Gérer les différentes modifications du fichier README.md
 
@@ -81,7 +81,7 @@ instantané depuis le dépôt vers la copie de travail (`git checkout`).
 ####	Exercice
 
 
-###4. Gestion de version d’un programme Java
+### 	4. Gestion de version d’un programme Java
 
 	On créé un répertoire _src_ qui contiendra les sources de _Cryptomonnaie.java_
 que l'on créera avec `touch Cryptomonnaie.java`.
