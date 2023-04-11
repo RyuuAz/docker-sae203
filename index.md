@@ -1,4 +1,4 @@
-**Noms :** LIZIARD François, GALMANT Maxime, BATILDE Secha, HANAK Valentin
+**Noms :** LIZIARD François, GALMANT Maxime, BATILDE Sacha, HANAK Valentin
 **Groupe :** C
 **Année :** 1ère année
 **IUT Le Havre - Cours GIT**
@@ -311,4 +311,10 @@ On peut ajouter les fichiers dans le référentiel, puis entrer `git status`, le
 sélectionner avec `git add .`, on les valide avec `git commit -m "Ajout des comptes rendu des différents TP"`, enfin, on les synchronise avec GitHub avec `git push -u origin master`.
 	
 On place un fichier _index.md_, qui contient tous les rapports des TP, dans une branche _gh-pages_.
-De plus, pour ajouter un thème, il nous faudra créer un fichier _y 
+De plus, pour ajouter un thème, il nous faudra créer un fichier _yconfig.yml_, contenant :
+
+`title: Midnight theme`
+`description: Midnight is a theme for GitHub Pages.`
+`show_downloads: true`
+`google_analytics:`
+`theme: jekyll-theme-midnight`
