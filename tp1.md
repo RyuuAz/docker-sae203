@@ -3,6 +3,8 @@
 **Année :** 1ère année
 **IUT Le Havre - Cours GIT**
 
+TP 1 : Travailler sur un répertoire local
+
 1. Configuration de git
 
 	On utilise la commande "git config --list" pour obtenir la configuration
