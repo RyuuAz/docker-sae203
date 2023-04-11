@@ -309,3 +309,6 @@ En Markdown, il est possible d'ajouter des liens avec `[Link](lien du site)` et 
 
 On peut ajouter les fichiers dans le référentiel, puis entrer `git status`, les 
 sélectionner avec `git add .`, on les valide avec `git commit -m "Ajout des comptes rendu des différents TP"`, enfin, on les synchronise avec GitHub avec `git push -u origin master`.
+	
+On place un fichier _index.md_, qui contient tous les rapports des TP, dans une branche _gh-pages_.
+De plus, pour ajouter un thème, il nous faudra créer un fichier _y 
