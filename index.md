@@ -9,7 +9,7 @@
 
 ###	1. Configuration de git
 
-	On utilise la commande `git config --list` pour obtenir la configuration
+On utilise la commande `git config --list` pour obtenir la configuration
 actuelle.
 
 ####	1.1 Identité
