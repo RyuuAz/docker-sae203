@@ -105,7 +105,7 @@ On peut modifier le fichier _.gitignore_, puis le sélectionner (`git add .gitig
 et l'ajouter à nouveau (`git commit -m ".gitignore mis à jour"`).
 
 
-##TP 2 : Travailler en autonomie sur un depôt github distant
+## TP 2 : Travailler en autonomie sur un depôt github distant
 
 ###	1. Créer un compte sur github
 
@@ -164,7 +164,7 @@ tp2 déjà synchronisé avec le dépôt distant.
 `git pull` et `git push`.
 
 
-##TP 3 : Travailler en équipe sur un dépôt GitHub distant
+## TP 3 : Travailler en équipe sur un dépôt GitHub distant
 
 ###	1. Inviter des collaborateurs dans un dépôt personnel
 
@@ -235,7 +235,7 @@ On peut finir par fusionner les branches avec `git merge AthosCoin`.
 On peut synchroniser les fichiers sur GitHub avec `git pull` et `git push -u origin  AthosCoin`.
 
 
-##TP 4 : Résolution de conflits et pull request
+## TP 4 : Résolution de conflits et pull request
 
 ###	1. Créer un conflit
 
@@ -276,7 +276,7 @@ ensuite la branche avec le répertoire distant avec `git push origin pull-reques
 onglets _Conversation_, _commits_, _files changed_, puis d'accepter avec _Merge pull  request_.
 
 
-##TP 5 : Comment créer un site Web sur GitHub pages
+## TP 5 : Comment créer un site Web sur GitHub pages
 
 
 ###	1. Créer un site Web pour un référentiel existant
