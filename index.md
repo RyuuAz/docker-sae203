@@ -69,11 +69,11 @@ Dans un dépôt Git, un fichier peut avoir trois états : Modifié, quand il y
 a des modifications locales qui ne sont ni validées, ni sélectionnées.
 Sélectionné, quand les modifications sont sélectionnées, mais pas validées.
 Validé, quand il a été validé et qu'il est synchrone avec le serveur.
-	Ces états correspondent à trois zones dans Git : La copie de travail, le système
+Ces états correspondent à trois zones dans Git : La copie de travail, le système
 de fichier local où les fichiers sont modifiés.
 La zone de sélection. Ainsi que le dépôt dans lequel les modifications sont
 enregistrées sous forme de validations.
-	Le passage d'un état à un autre se fait par trois actions : Sélection qui
+Le passage d'un état à un autre se fait par trois actions : Sélection qui
 sélectionne les fichiers pour la validation (`git add`). La validation qui crée le
 commit et l'envoie vers le dépôt (`git commit`). La récupération qui récupère un
 instantané depuis le dépôt vers la copie de travail (`git checkout`).
@@ -320,3 +320,10 @@ De plus, pour ajouter un thème, il nous faudra créer un fichier _yconfig.yml_,
 `theme: jekyll-theme-midnight`
 
 On peut accéder au site à l'adresse : [ryuuaz.github.io/docker-sae203/](https://ryuuaz.github.io/docker-sae203/)
+
+
+
+## TP1 : Fonctionnement de base de Docker
+
+Afin de voir quelle version de Docker est installée, on entre `docker --version`.
+Docker permet de développer et de lancer des applications dans un conteneur.
