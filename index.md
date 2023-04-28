@@ -325,5 +325,171 @@ On peut accéder au site à l'adresse : [ryuuaz.github.io/docker-sae203/](https:
 
 ## TP1 : Fonctionnement de base de Docker
 
+### 2. Premières notions de Docker
+
 Afin de voir quelle version de Docker est installée, on entre `docker --version`.
+`Docker version 23.0.5, build bc4487a`
 Docker permet de développer et de lancer des applications dans un conteneur.
+
+On peut ensuite lancer un premier conteneur avec `docker run hello-world`. Cela
+renvoie le résultat suivant :
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+Le premier évènement signifie que le client Docker a contacté la Docker daemon
+pour recevoir l'image. Ensuite, le Docker daemon a téléchargée l'image `hello-world`
+depuis le Docker Hub. Dans le troisième évènement, le Docker daemon a créée un
+conteneur à partir de l'image, celle-ci a ensuite lancé un exécutable qui est
+responsable du texte affiché. Enfin, le Docker daemon a envoyé le résultat au client
+Docker qui l'a affiché sur le Terminal.
+
+#### 2.1 Image Docker VS conteneur Docker
+
+**Image Docker** : Il s'agit d'un fichier non modifiable contenant les fichiers
+nécessaires à l'exécution d'une application. Une image ne peut être exécutée,
+mais peut être utilisée comme modèle dans la création d'un conteneur.
+**Conteneur Docker** : Il s'agit d'une image en cours d'éxécution, il peut être
+modifié.
+
+On peut voir la liste des machines en cours d'éxécution avec `docker ps`. Cette
+commande retourne `CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES`.
+
+On peut aussi voir les conteneurs actifs ou arrêtés avec `docker ps -a`. Ce qui
+renvoie `CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES`
+`c5504d014e8e   hello-world   "/hello"   17 minutes ago   Exited (0) 17 minutes ago             elegant_franklin`.
+
+Pour lister les images téléchargées sur la machine, on entre `docker images`. Le
+résultat est `REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+hello-world   latest    feb5d9fea6a5   19 months ago   13.3kB`.
+
+#### 2.2. Images les plus populaires
+
+On peut trouver les images les plus populaires sur [hub.docker.comm](https://https://hub.docker.com/explore/).
+
+### 3. Interactions avec les conteneurs Docker
+
+#### 3.1. Conteneur en mode interactif
+
+On peut lancer **alpine**, une version allégée de Linux avec le paramètre `ls` en
+tapant : `docker run alpine ls`.
+Le résultat est : 
+
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+f56be85fc22e: Pull complete 
+Digest: sha256:124c7d2707904eea7431fffe91522a01e5a861a624ee31d03372cc1d138a3126
+Status: Downloaded newer image for alpine:latest
+bin
+dev
+etc
+home
+lib
+media
+mnt
+opt
+proc
+root
+run
+sbin
+srv
+sys
+tmp
+usr
+var
+
+Il est plus utile d'employer le mode interactif avec `docker run -it alpine`.
+On remarque que l'on peut à présent naviguer dans les différents répertoires du
+conteneur.
+On peut vérifier qu'il s'agit d'une instance de l'image alpine avec `cat /etc/os-release`.
+Ce qui retourne :
+`NAME="Alpine Linux"`
+`ID=alpine`
+`VERSION_ID=3.17.3`
+`PRETTY_NAME="Alpine Linux v3.17"`
+`HOME_URL="https://alpinelinux.org/"`
+`BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"`
+
+On peut voir l'ensemble des conteneurs Docker avec `docker ps`, le résultat est :
+`CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS         PORTS     NAMES`
+`73671abb9d2c   alpine    "/bin/sh"   6 minutes ago   Up 6 minutes             objective_bouman`
+On peut intéragir avec un conteneur déjà ouvert en tapant `docker exec -it objective_bouman /bin/sh`
+
+#### 3.2. Ports, volumes et copie de fichiers
+
+##### 3.2.1. Ports
+
+Nous pouvons exécuter **httpd**, une image fournissant le service **HTTP apache**,
+avec la commande `docker run httpd`. Ensuite, en entrant `localhost` dans la barre
+de navigation d'un navigateur Web, on constate qu'il n'y a pas de service HTTP.
+
+Afin de lancer un service accessible, il faut entrer `docker run --name httpd-FrancoisLiziard -d -p 8080:80 httpd`.
+`--name httpd-FrançoisLiziard` correspond au nom du conteneur, `-d` permet d'exécuter
+le conteneur en arrière-plan, `-p 8080:80` permet de mapper le port, avec `8080` 
+représentant le port exposé sur la machine et `80` représentant le port du conteneur
+et `httpd` correspond à l'image.
+Cette commande retourne `9a4066d775d97ae3fa09dffe25be71fb3dba4169a2b3dd97c7d73818fe1e1681`.
+Ensuite, on entre dans un navigateur Web, l'adresse `localhost:8080`, ce qui
+affiche une page web.
+
+##### 3.2.2. Copier des fichiers dans un conteneur en cours d’exécution
+
+Pour copier un fichier ou un répertoire du conteneur vers la machine hôte avec
+`docker cp nom_du_conteneur:/chemin/vers/le/contenu/ /chemin/vers/lequel/on/souhaite/copier`.
+Afin de copier un fichier local vers le conteneur, nous tapons `docker cp ./fichier nom_du_conteneur:/`
+
+Pour répondre à l'exercice, il faut tout d'abord créer le fichier `index.html`
+avec son contenu. Ensuite, nous entrons dans le terminal, la commande `sudo docker cp ~/Bureau/courseGIT/index.html httpd-FrancoisLiziard:/usr/local/apache2/htdocs/index.html`
+pendant que le conteneur est exécuté.
+On peut ensuite remarquer en rechargeant la page, que son contenu a changé.
+Le conteneur doit être arrêté, pour cela, on entre `docker stop httpd-FrancoisLiziard`.
+
+##### 3.2.3. Volumes
+
+On créé un répertoire html avec `mkdir html`, dans lequel on se place en entrant
+`cd html`, il faut ensuite créer un fichier **index.html** avec `touch index.html`.
+De plus, on tape la commande `docker run --name httpd-FrancoisLiziard -d -p 8080:80 -v $(pwd):/usr/local/apache2/htdocs httpd`.
+`--name httpd-FrancoisLiziard` permet de nommer le conteneur.
+`-d` permet d'exécuter le conteneur en arrière-plan.
+`-p 8080:80` permet de mapper le port 80du conteneur sur celui indiqué de l'hôte.
+`-v $(pwd):/usr/local/apache2/htdocs` permet de créer un volume entre l'hôte et le
+conteneur, à gauche de `:`, on indique le fichier à partager depuis l'hôte et à
+droite, on indique le dossier contenant les pages web.
+`httpd` représente l'image à lancer.
+
+En ouvrant la page du conteneur, on remarque que le dossier html est synchronisé
+avec le conteneur, il n'y a qu'à modifier le fichier **index.html** et les
+changements se répercutent sur le conteneur.
+
+## TP2 : Dockerfile pour la création d'images
+
+Dockerfile permet de généreer différents types d'images avec les caractéristiques
+que nous souhaitons.
+
+### 1. Introduction à Dockerfile
+
+#### 1.1 Notre premier Dockerfile
+
+Un fichier dockerfile est créé en précisant ce qui va dans l'environnement, à
+l'intérieur du conteneur
+
+##### 1.1.1. Structure de répertoires
+
