@@ -17,7 +17,7 @@ actuelle.
 Pour modifier respectivement le nom d'utilisateur et le mail, on entre :
 `git config --global user.name "François Liziard"` et `git config --global user.email francois.liziard@etu.univ-lehavre.fr`
 
-####	1.2 Editeur
+####	1.2 Éditeur
 
 Pour configurer l'éditeur par défaut : `git config --global core.editor gedit`
 
@@ -89,11 +89,11 @@ On va sélectionner le fichier _Cryptomonnaie.java_ avec `git add Cryptomonnaie.
 puis on va l'ajouter avec `git commit -m "Première version du fichier Cryptomonnaie.java"`.
 On peut vérifier les informations sur les ajouts avec la commande : `git log`.
 
-####	4.1. Creation du fichier .gitignore
+####	4.1. Création du fichier .gitignore
 	
-En compilant le fichier _Cryptomonnaie.java_, on remarque qu'il apparait dans
+En compilant le fichier _Cryptomonnaie.java_, on remarque qu'il apparaît dans
 le retour de `git status`. Il ne faut pas l'ajouter dans le dépôt, pour que git
-l'ignore, il faut créer le fichier _.gitignore_. Ce fichier va apparaitre dans
+l'ignore, il faut créer le fichier _.gitignore_. Ce fichier va apparaître dans
 le retour de `git status`. Pour ignorer tous les fichier _.class_, on ajoute à
 _.gitignore_ la ligne _*.class_, on sélectionne puis on ajoute le fichier au
 dépôt (`git add .gitignore` et `git commit -m ".gitignore ajouté"`). Le fichier
@@ -178,7 +178,7 @@ On peut ensuite cloner le dépôt avec `git clone git@github.com:FrancoisLiziard
 du tp2 en utilisant les commandes `git status`, `git add .`, `git commit -m "tp3"`,
 `git pull` et `git push`.
 
-2. Le deuxième memebre entre `git pull`.
+2. Le deuxième membre entre `git pull`.
 
 3. Le contenu de GitHub correspond à celui du dépôt local.
 
@@ -219,7 +219,7 @@ Pour voir les changements, on entre `git log --graph --oneline --all --decorate 
 
 On peut fusionner les branches en se plaçant dans la branche principale et en
 tapant `git merge test`. La commande `git log --graph --oneline --all --decorate --topo-order` nous permet de voir que les deux branches ont été fusionnées.
-En tapant `ls`, on voit que le fichier _test.txt_ apparait dans la branche
+En tapant `ls`, on voit que le fichier _test.txt_ apparaît dans la branche
 principale.
 
 ####	Exercices :
@@ -241,8 +241,8 @@ On peut synchroniser les fichiers sur GitHub avec `git pull` et `git push -u ori
 
 On peut créer un nouveau dépôt _test-conflict_ directement sur GitHub et y créer le
 fichier _README.md_.
-On peut ensuite cloner le dépôt sur GitHub avec `git clone git@github.com:FrancoisLiziard/test-conflict.git`. Ensuite, on courrige une des deux fautes avec `git add .`, puis `git commit -m "Correction de deux"` et `git push`.
-`git push` retourne une erreur : _error: impossible de pousser des références vers  'github.com:FrancoisLiziard/test-conflict.git'_. Cela se produit car le deuxième utilisateur a déjà corrigée et synchronysée une des erreurs. On entre "git pull". Il y a un conflit.
+On peut ensuite cloner le dépôt sur GitHub avec `git clone git@github.com:FrancoisLiziard/test-conflict.git`. Ensuite, on corrige une des deux fautes avec `git add .`, puis `git commit -m "Correction de deux"` et `git push`.
+`git push` retourne une erreur : _error: impossible de pousser des références vers  'github.com:FrancoisLiziard/test-conflict.git'_. Cela se produit car le deuxième utilisateur a déjà corrigée et synchronisée une des erreurs. On entre "git pull". Il y a un conflit.
 
 
 ###	2. Résoudre un conflit
@@ -285,7 +285,7 @@ Pour créer un site web depuis un référentiel déjà existant, il faut se rend
 du référentiel du _tp3_. Pour créer un site web associé à un référentiel, il faut changer la
 visibilité du référentiel en _public_ depuis _settings_, puis aller sur _Pages_ et choisir 
 un thème.
-On remarque qu'il n'est plus possible de seélectionner un thème ni de créer un fichier
+On remarque qu'il n'est plus possible de sélectionner un thème ni de créer un fichier
 _index.md_ dans GitHub. Il faudra donc le réaliser manuellement...
 Il faut créer un fichier _index.md_ dans une branche _gh-pages_ avec `git checkout -b gh-pages`. Il faut ensuite créer un fichier _index.md_, `touch index.md` et le modifier.
 On peut l'envoyer sur le référentiel avec `git status`, `git add index.md`, `git commit -m "Création de index.md"` et `git push -u origin gh-pages`.
@@ -304,8 +304,8 @@ En Markdown, il est possible d'ajouter des liens avec `[Link](lien du site)` et 
 
 ####	Création du site web
 
-1. Un des memebres à créé le référentiel docker-sae203.
-2. Tous les membres de l'équipe ont accés au référentiel.
+1. Un des membres à créé le référentiel docker-sae203.
+2. Tous les membres de l'équipe ont accès au référentiel.
 
 On peut ajouter les fichiers dans le référentiel, puis entrer `git status`, les 
 sélectionner avec `git add .`, on les valide avec `git commit -m "Ajout des comptes rendu des différents TP"`, enfin, on les synchronise avec GitHub avec `git push -u origin master`.
@@ -370,7 +370,7 @@ mais peut être utilisée comme modèle dans la création d'un conteneur.
 **Conteneur Docker** : Il s'agit d'une image en cours d'éxécution, il peut être
 modifié.
 
-On peut voir la liste des machines en cours d'éxécution avec `docker ps`. Cette
+On peut voir la liste des machines en cours d'exécution avec `docker ps`. Cette
 commande retourne `CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES`.
 
 On peut aussi voir les conteneurs actifs ou arrêtés avec `docker ps -a`. Ce qui
@@ -383,7 +383,7 @@ hello-world   latest    feb5d9fea6a5   19 months ago   13.3kB`.
 
 #### 2.2. Images les plus populaires
 
-On peut trouver les images les plus populaires sur [hub.docker.comm](https://https://hub.docker.com/explore/).
+On peut trouver les images les plus populaires sur [hub.docker.com](https://https://hub.docker.com/explore/).
 
 ### 3. Interactions avec les conteneurs Docker
 
@@ -431,7 +431,7 @@ Ce qui retourne :
 On peut voir l'ensemble des conteneurs Docker avec `docker ps`, le résultat est :
 `CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS         PORTS     NAMES`
 `73671abb9d2c   alpine    "/bin/sh"   6 minutes ago   Up 6 minutes             objective_bouman`
-On peut intéragir avec un conteneur déjà ouvert en tapant `docker exec -it objective_bouman /bin/sh`
+On peut interagir avec un conteneur déjà ouvert en tapant `docker exec -it objective_bouman /bin/sh`
 
 #### 3.2. Ports, volumes et copie de fichiers
 
@@ -469,7 +469,7 @@ On créé un répertoire html avec `mkdir html`, dans lequel on se place en entr
 De plus, on tape la commande `docker run --name httpd-FrancoisLiziard -d -p 8080:80 -v $(pwd):/usr/local/apache2/htdocs httpd`.
 `--name httpd-FrancoisLiziard` permet de nommer le conteneur.
 `-d` permet d'exécuter le conteneur en arrière-plan.
-`-p 8080:80` permet de mapper le port 80du conteneur sur celui indiqué de l'hôte.
+`-p 8080:80` permet de mapper le port 80 du conteneur sur celui indiqué de l'hôte.
 `-v $(pwd):/usr/local/apache2/htdocs` permet de créer un volume entre l'hôte et le
 conteneur, à gauche de `:`, on indique le fichier à partager depuis l'hôte et à
 droite, on indique le dossier contenant les pages web.
@@ -481,7 +481,7 @@ changements se répercutent sur le conteneur.
 
 ## TP2 : Dockerfile pour la création d'images
 
-Dockerfile permet de généreer différents types d'images avec les caractéristiques
+Dockerfile permet de générer différents types d'images avec les caractéristiques
 que nous souhaitons.
 
 ### 1. Introduction à Dockerfile
@@ -493,3 +493,107 @@ l'intérieur du conteneur
 
 ##### 1.1.1. Structure de répertoires
 
+On commence par créer le répertoire qui hébergera le dockerfile avec `mkdir premierDockerfile`. Nous pouvons y accéder avec `cd premierDockerfile`. Ensuite,
+nous créons le fichier Dockerfile avec `touch Dockerfile` dans lequel on copie le
+code suivant.
+
+`# Utiliser l'image httpd officielle comme image parent`
+`FROM httpd`
+
+`# Copier le répertoire html du répertoire courant vers le répertoire de l'image /usr/.../htdocs`
+`COPY ./html/ /usr/local/apache2/htdocs/`
+
+`# Exécuter la commande echo sur le conteneur`
+`# (il peut s'agir de n'importe quelle autre commande)`
+`RUN echo 'Hello world! Voici notre premier dockerfile'`
+
+
+`# Rendre le port 80 accessible au monde en dehors de ce conteneur`
+`EXPOSE 80`
+
+Nous devons ensuite créer un répertoire `html/` avec ` mkdir `html`. Pour y créer
+un fichier `index.html`, on entre `touch index.html`, puis on peut créer la page web.
+Après être retourné au dossier premierDockerfile, on remarque que `tree` retourne
+l'arborescence correcte.
+
+##### 1.1.2 Créer l'image et lancer le conteneur
+
+Pour construire l'image à partir du dockerfile, nous entrons `docker build -t francois-liziard-httpd-img .`,
+`docker build` indique la création d'une nouvelle image, `-t francois-liziard-httpd-img` et `.` indique le répertoire courant.
+Nous pouvons ensuite lancer le serveur web avec `docker run --name httpd-FrancoisLiziardDockerfile -d -p 8080:80 francois-liziard-httpd-img`.
+Après avoir entré `localhost:8080`, nous pouvons remarquer que l'application est
+en cours d'exécution.
+Le retour de `docker ps` correspond bien à :
+`CONTAINER ID   IMAGE                        COMMAND              CREATED         STATUS         PORTS                                   NAMES`
+`00f845c66d02   francois-liziard-httpd-img   "httpd-foreground"   2 minutes ago   Up 2 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   httpd-FrancoisLiziardDockerfile`
+
+Pour arrêter le conteneur, nous tapons `docker stop 00f845c66d02`, puis `docker rm 00f845c66d02` afin de le supprimer.
+
+#### 1.2. Installer un service apache à partir d’une image vierge debian
+
+Nous pouvons observer que le dockerfile utilise une image **Debian** comme image
+parent, dans le cas de la première ligne. Pour la ligne suivante, le dockerfile
+télécharge des mises à jour, puis installe **apache2**. Dans le cas de la troisième
+ligne, le contenu du répertoire `./html` est copié vers `/var/www/html` sur l'image.
+L'instruction `EXPOSE 80` indique que le conteneur écoute le port 80. Enfin, à la cinquième ligne, `CMD` indique qu'une commande est exécutée entre crochet avec le
+chemin absolu vers `apache2ctl`.
+
+Il faut tout d'abord créer le répertoire servant à contenir le Dockerfile, créer
+le fichier Dockerfile dans lequel on copie le code donné. Ensuite, nous créons
+un sous-répertoire `/html` qui doit contenir un fichier `index.html`
+
+Pour construire l'image à partir du dockerfile, nous entrons `docker build -t francois-liziard-apache-img .`.
+Nous pouvons ensuite lancer le serveur web avec `docker run --name apache-FrancoisLiziardDockerfile -d -p 9000:80 francois-liziard-apache-img`.
+Nous pouvons ensuite entrer dans la barre de navigation `localhost:9000`. On
+arrête ensuite le conteneur avec `docker stop apache-FrancoisLiziardDockerfile`.
+
+### 2. Dockerfile + github
+
+On peut sauvegarder l'exercice de la section 1.1 dans un référentiel GitHub. Il faut
+créer un dépôt sur la machine locale avec `git init`, ainsi qu'un dépôt vide sur
+GitHub. Il faut ensuite lier les deux référentiels avec `git remote add origin git@github.com:FrancoisLiziard/premierDockerfile.git`, puis ajouter les fichier
+avec `git add .`, `git commit -m "Ajout du premier dockerfile"` et `git push -u origin master`.
+
+
+On peut déployer un exemple de Dockerfile avec `git clone git@github.com:juanluck/exempleDockerfile.git`, y accéder avec `cd exempleDockerfile`, construire l'image
+décrite en tapant `docker build -t francois-liziard-httpd-img-ex .`, on lance le
+serveur avec `docker run -d -p 8080:80 francois-liziard-httpd-img-ex` et on lance
+en entrant `localhost:8080` dans un navigateur web.
+On peut vérifier que le conteneur associé est actif avec `docker ps` qui renvoie :
+`CONTAINER ID   IMAGE                           COMMAND              CREATED              STATUS              PORTS                                   NAMES`
+`07d4879129b6   francois-liziard-httpd-img-ex   "httpd-foreground"   About a minute ago   Up About a minute   0.0.0.0:8080->80/tcp, :::8080->80/tcp   optimistic_edison`
+
+On peut enfin arrêter le conteneur avec `docker stop optimistic_edison` et le
+supprimer avec `docker rm optimistic_edison`.
+
+
+De plus, nous pouvons déployer un serveur **LAMP** (Apache + MariaDB + PHP) sur
+notre machine. Pour cela, il faut cloner le référentiel avec `git clone git@github.com:abderzah/lampDocker.git`, nous pouvons nous placer dans le référentiel
+avec `cd lampDocker`, puis construire le conteneur avec `docker build -t debian-lamp .`,
+lancer le service avec `docker run -p 8000:80 debian-lamp`, enfin nous vérifions
+que l'application s'exécute en tapant `localhost:8000/index.php` dans un navigateur.
+
+Concernant la structure des répertoire, nous pouvons remarquer que le répertoire `data`
+contient un fichier SQL servant à créer la base de données et à y insérer des
+valeurs. Ensuite, on trouve, dans le répertoire `html/`, un fichier `index.html`
+servant à placer les différents élémnts et à définir leur style, nous obsrervons
+de même un fichier `index.php` dont l'utilité est de rendre la page dynamique et
+d'afficher les valeurs de la base de données dans un tableau HTML.
+Dans le Dockerfile nous remarquons que l'image est basée sur celle de Debian. En
+seconde ligne, le fichier installe des mises à jour, installe apache2, mariadb client
+et serveur, PHP, PHP-MySQL et libapache2-mod-php. En troisième ligne, le fichier
+copie le contenu du répertoire `html/` vers `/var/www//html` car il est destiné
+à l'affichage pour l'utilisateur, les données et le script de lancement `start-script.sh`
+sont aussi copiés vers, respectivement `/data` et `/root/`.
+De plus, il y a deux ports sur lesquels le conteneur écoute. La commande `RUN chmod +x /root/start-script.sh` droits d'exécution à `start-script.sh`, puis l'exécute avec
+`CMD ["/bin/bash", "/root/start-script.sh"]`
+
+### 3. Un point sur Docker compose
+
+Pour déployer un serveur **Docker Compose** afin de gérer plusieurs conteneurs.
+Dans un premier temps, nous vérifions que Docker Compose est installé avec `docker-compose --version`, cela retourne `docker-compose version 1.25.0, build unknown`.
+Dans un second temps, nous devons cloner le référenciel avec `git clone git@github.com:abderzah/docker_customer_catalog.git` et y accéder avec `cd`.
+On peut accéder à l'application en entrant `localhost` dans un navigateur Web.
+Ensuite, nous arrêtons l'application avec la commande `docker-compose down` et
+il est possible de supprimer le conteneur arrêté avec `docker-compose rm` ou
+`docker-compose rm [-fs] pour forcer sa suppression.
