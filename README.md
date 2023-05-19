@@ -15,3 +15,7 @@ Assurez-vous de remplacer "nom_image" par le nom que vous souhaitez donner à vo
 5. Ouvrez une nouvelle fenêtre de terminal ou de ligne de commande et placez-vous dans le répertoire contenant les Fichiers Java.
 
 6. Exécutez la commande suivante pour créer l'image Docker : `javac *.java .`
+
+7. Exécutez la commande suivante pour créer l'image Docker : `java Init.java .`
+
+Cette commance vous ouvrira une fenêtre vous permettant de rentrez un pseudonyme. une fois
