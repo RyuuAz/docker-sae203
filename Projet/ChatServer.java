@@ -5,93 +5,108 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatServer {
-	private ArrayList<ClientThread> clients;
+    public static ArrayList<ClientThread> clients;
 
-	public ChatServer() {
-		clients = new ArrayList<ClientThread>();
-	}
+    public ChatServer() {
+        clients = new ArrayList<ClientThread>();
+    }
 
-	public void start() {
-		ServerSocket serverSocket = null;
-		boolean listening = true;
+    public void start() {
+        ServerSocket serverSocket = null;
+        boolean listening = true;
 
-		try {
-			serverSocket = new ServerSocket(9000);
-		} catch (IOException e) {
-			System.err.println("Impossible d'écouter sur le port: 9000");
-			System.exit(-1);
-		}
+        try {
+            InputStreamReader inputStreamReader = new InputStreamReader(System.in, "UTF-8");
+            BufferedReader reader = new BufferedReader(inputStreamReader);
 
-		System.out.println("Serveur lancé en attente de connexion...");
+            serverSocket = new ServerSocket(9000);
+        } catch (IOException e) {
+            System.err.println("Could not listen on port: 9000.");
+            System.exit(-1);
+        }
+        //Chat chatbox = new Chat();
 
-		while (listening) {
-			Socket clientSocket = null;
-			try {
-				clientSocket = serverSocket.accept();
-			} catch (IOException e) {
-				System.err.println("Erreur lors de l'acceptation de la connexion.");
-				System.exit(-1);
-			}
 
-			System.out.println("Client connecté: " + clientSocket.getInetAddress().getHostName());
+        System.out.println("Serveur lance en attente de connexion...");
+        
 
-			ClientThread clientThread = new ClientThread(clientSocket, this);
-			clients.add(clientThread);
-			clientThread.start();
-		}
+        while (listening) {
+            Socket clientSocket = null;
+            try {
+                clientSocket = serverSocket.accept();
+            } catch (IOException e) {
+                System.err.println("Erreur lors de l'acceptation de la connexion.");
+                System.exit(-1);
+            }
 
-		try {
-			serverSocket.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+            System.out.println("Client connecte: " + clientSocket.getInetAddress().getHostName());
 
-	public void broadcast(String message) {
-		for (ClientThread client : clients) {
-			client.sendMessage(message);
-		}
-	}
+            ClientThread clientThread = new ClientThread(clientSocket, this);
+            clients.add(clientThread);
+            clientThread.start();
+        }
 
-	public static void main(String[] args) {
-		new ChatServer().start();
-	}
+        try {
+            serverSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void broadcast(String message) {
+        for (ClientThread client : clients) {
+            client.sendMessage(message);
+        }
+    }
+
+   
+
+    public static void main(String[] args) {
+       
+        new ChatServer().start();
+    }
 }
 
 class ClientThread extends Thread {
-	private Socket clientSocket;
-	private PrintWriter out;
-	private ChatServer server;
+    private Socket clientSocket;
+    private PrintWriter out;
+    private ChatServer server;
 
-	public ClientThread(Socket socket, ChatServer server) {
-		this.clientSocket = socket;
-		this.server = server;
-	}
+    public ClientThread(Socket socket, ChatServer server) {
+        this.clientSocket = socket;
+        this.server = server;
+    }
 
-	public void run() {
-		try {
-			out = new PrintWriter(clientSocket.getOutputStream(), true);
-			BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+    public void run() {
+        
+        try {
+            out = new PrintWriter(clientSocket.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
-			String inputLine;
+            String inputLine;
 
-			while ((inputLine = in.readLine()) != null) {
-				System.out.println("C : " + inputLine);
-				server.broadcast(inputLine);
-			}
+            while ((inputLine = in.readLine()) != null) {
+                System.out.println("Client says: " + inputLine);
+                System.out.println(server.clients.size());
+                server.broadcast(inputLine);
+            }
 
-			System.out.println("Client déconnecté.");
-			out.close();
-			in.close();
-			clientSocket.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            System.out.println("Client deconnecte.");
+            out.close();
+            in.close();
+            clientSocket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void sendMessage(String message) {
+        out.println(message);
+    }
 
-	public void sendMessage(String message) {
-		out.println(message);
-	}
 }
+
