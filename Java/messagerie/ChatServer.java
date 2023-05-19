@@ -20,6 +20,9 @@ public class ChatServer {
         boolean listening = true;
 
         try {
+            InputStreamReader inputStreamReader = new InputStreamReader(System.in, "UTF-8");
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+
             serverSocket = new ServerSocket(9000);
         } catch (IOException e) {
             System.err.println("Could not listen on port: 9000.");
@@ -27,7 +30,9 @@ public class ChatServer {
         }
         //Chat chatbox = new Chat();
 
+
         System.out.println("Serveur lance en attente de connexion...");
+        
 
         while (listening) {
             Socket clientSocket = null;
@@ -58,7 +63,10 @@ public class ChatServer {
         }
     }
 
+   
+
     public static void main(String[] args) {
+       
         new ChatServer().start();
     }
 }
@@ -95,31 +103,10 @@ class ClientThread extends Thread {
             e.printStackTrace();
         }
     }
-
+    
     public void sendMessage(String message) {
         out.println(message);
     }
-}
-/* 
-try {
-    String command = "ipconfig";
-    executeCommand(command);
-} catch (IOException | InterruptedException e) {
-    e.printStackTrace();
+
 }
 
- public static void executeCommand(String command) throws IOException, InterruptedException {
-        ProcessBuilder processBuilder = new ProcessBuilder(command.split("\\s+"));
-        Process process = processBuilder.start();
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
-        }
-
-        int exitCode = process.waitFor();
-        System.out.println("La commande s'est terminée avec le code de sortie : " + exitCode);
-    }
-    
-*/
