@@ -597,3 +597,5 @@ On peut accéder à l'application en entrant `localhost` dans un navigateur Web.
 Ensuite, nous arrêtons l'application avec la commande `docker-compose down` et
 il est possible de supprimer le conteneur arrêté avec `docker-compose rm` ou
 `docker-compose rm [-fs] pour forcer sa suppression.
+	
+# Guide d'utilisation du projet 
