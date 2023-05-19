@@ -600,7 +600,7 @@ il est possible de supprimer le conteneur arrêté avec `docker-compose rm` ou
 	
 # Guide d'utilisation du projet 
 	
-## Création d'un conteneur Docker
+## Les différentes étapes a suivre
 
 1. Installez Docker sur votre machine. Vous pouvez télécharger Docker à partir du site officiel et suivre les instructions d'installation pour votre système d'exploitation.
 
