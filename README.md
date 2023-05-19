@@ -18,4 +18,4 @@ Assurez-vous de remplacer "nom_image" par le nom que vous souhaitez donner à vo
 
 7. Exécutez la commande suivante pour créer l'image Docker : `java Init.java .`
 
-Cette commance vous ouvrira une fenêtre vous permettant de rentrez un pseudonyme. une fois
+Cette commance vous ouvrira une fenêtre vous permettant de rentrez un pseudonyme. Une fois votre pseudo rentré, une nouvelle
