@@ -596,7 +596,7 @@ Dans un second temps, nous devons cloner le référenciel avec `git clone git@gi
 On peut accéder à l'application en entrant `localhost` dans un navigateur Web.
 Ensuite, nous arrêtons l'application avec la commande `docker-compose down` et
 il est possible de supprimer le conteneur arrêté avec `docker-compose rm` ou
-`docker-compose rm [-fs] pour forcer sa suppression.
+`docker-compose rm [-fs] pour forcer sa suppression.`
 	
 # Guide d'utilisation du projet 
 	
@@ -606,8 +606,8 @@ il est possible de supprimer le conteneur arrêté avec `docker-compose rm` ou
 
 2. Ouvrez une fenêtre de terminal ou de ligne de commande et placez-vous dans le répertoire contenant le fichier Dockerfile.
 
-3. Exécutez la commande suivante pour créer l'image Docker : 'docker build -t nom_image .'
+3. Exécutez la commande suivante pour créer l'image Docker : `docker build -t nom_image .`
 
 Assurez-vous de remplacer "nom_image" par le nom que vous souhaitez donner à votre image et "tag" par la version ou le tag que vous souhaitez attribuer à l'image. Le point à la fin de la commande indique que le contexte de construction est le répertoire courant.
 
-Une fois que la construction de l'image est terminée, vous pouvez exécuter un conteneur basé sur cette image en utilisant la commande suivante : 'docker run -p port_local:port_conteneur nom_image:tag.'
+Une fois que la construction de l'image est terminée, vous pouvez exécuter un conteneur basé sur cette image en utilisant la commande suivante : `docker run -p port_local:port_conteneur nom_image:tag.`
